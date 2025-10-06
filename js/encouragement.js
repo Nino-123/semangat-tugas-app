@@ -75,7 +75,7 @@ function goToClickGame() {
 }
 
 function goToHomePage() {
-    window.location.href = 'index.html';
+    window.location.href = 'main-question.html';
 }
 
 // Initialize with confetti on page load

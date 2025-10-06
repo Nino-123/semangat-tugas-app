@@ -18,7 +18,7 @@ window.addEventListener('load', () => {
 
 // Navigate to main page when Gracia is clicked
 function goToMain() {
-    window.location.href = 'index.html';
+    window.location.href = 'main-question.html';
 }
 
 // Navigate to Balqis page when Balqis is clicked

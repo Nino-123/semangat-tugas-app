@@ -146,7 +146,7 @@ function restartGame() {
 }
 
 function goToMenu() {
-    window.location.href = 'index.html';
+    window.location.href = 'main-question.html';
 }
 
 // Event listeners

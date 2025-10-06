@@ -220,7 +220,7 @@ function restartGame() {
 }
 
 function goToMenu() {
-    window.location.href = 'index.html';
+    window.location.href = 'main-question.html';
 }
 
 // Prevent context menu on right click
