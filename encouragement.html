@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivasi - Semangat!</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Confetti container -->
+    <div class="confetti-container" id="confettiContainer"></div>
+    
+    <div class="popup encouragement" id="encouragementPopup">
+        <div class="emoji">💪✨</div>
+        <div class="encouragement-text" id="encouragementText">Kamu bisa banget! Tugas ini cuma batu loncatan menuju kesuksesanmu! 🚀</div>
+        <div class="button-group">
+            <button class="new-encouragement-btn" onclick="generateNewEncouragement()">Motivasi Lagi! 🔥</button>
+            <button class="joke-btn" onclick="goToJokePage()">Jokes! 😂</button>
+            <button class="game-btn flappy-btn" onclick="goToFlappyBird()">Flappy Bird 🐦</button>
+            <button class="game-btn click-btn" onclick="goToClickGame()">Click Game 🎯</button>
+            <button class="close-btn" onclick="goToHomePage()">Kembali</button>
+        </div>
+    </div>
+
+    <script src="js/encouragement.js"></script>
+</body>
+</html>

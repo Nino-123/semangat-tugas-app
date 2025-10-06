@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Game 🎯</title>
+    <link rel="stylesheet" href="css/click-game.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>🎯 Click Game</h1>
+            <div class="stats">
+                <div class="score">Score: <span id="score">0</span></div>
+                <div class="time">Time: <span id="time">30</span>s</div>
+                <div class="combo">Combo: <span id="combo">0</span></div>
+            </div>
+        </div>
+
+        <div class="game-area" id="gameArea">
+            <div class="instructions" id="instructions">
+                <h2>🎮 How to Play</h2>
+                <p>Click the targets as fast as you can!</p>
+                <p>Different targets give different points</p>
+                <p>Build combos for bonus points!</p>
+                <button class="start-btn" onclick="startGame()">Start Game! 🚀</button>
+                <button class="back-btn" onclick="goToMenu()">Back to Menu</button>
+            </div>
+
+            <div class="game-over hidden" id="gameOver">
+                <h2>🏆 Game Over!</h2>
+                <div class="final-score">
+                    Final Score: <span id="finalScore">0</span>
+                </div>
+                <div class="performance" id="performance"></div>
+                <div class="motivation" id="motivation"></div>
+                <button class="restart-btn" onclick="restartGame()">Play Again! 🔄</button>
+                <button class="back-btn" onclick="goToMenu()">Back to Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/click-game.js"></script>
+</body>
+</html>

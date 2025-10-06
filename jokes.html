@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokes - Haha!</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Confetti container -->
+    <div class="confetti-container" id="confettiContainer"></div>
+    
+    <div class="popup joke-popup" id="jokePopup">
+        <div class="emoji">😂🎭</div>
+        <div class="joke-text" id="jokeText">Kenapa mahasiswa suka begadang? Karena deadline itu seperti alarm... selalu di-snooze! 😴</div>
+        <div class="button-group">
+            <button class="new-joke-btn" onclick="generateNewJoke()">New Joke! 🤣</button>
+            <button class="new-encouragement-btn" onclick="goToEncouragementPage()">Motivasi! 💪</button>
+            <button class="close-btn" onclick="goToHomePage()">Kembali</button>
+        </div>
+    </div>
+
+    <script src="js/jokes.js"></script>
+</body>
+</html>

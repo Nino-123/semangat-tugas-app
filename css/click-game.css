@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.game-container {
+    width: 90%;
+    max-width: 800px;
+    height: 90vh;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-header {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.game-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.stats div {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    backdrop-filter: blur(10px);
+}
+
+.game-area {
+    flex: 1;
+    position: relative;
+    background: linear-gradient(45deg, #f0f0f0 25%, transparent 25%), 
+                linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #f0f0f0 75%), 
+                linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    overflow: hidden;
+}
+
+.instructions, .game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+}
+
+.instructions h2, .game-over h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.instructions p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.final-score {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4facfe;
+    margin: 20px 0;
+}
+
+.performance {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.motivation {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 15px 0;
+    font-style: italic;
+}
+
+.btn, .start-btn, .restart-btn, .back-btn {
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.start-btn, .restart-btn {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+}
+
+.back-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn:hover, .start-btn:hover, .restart-btn:hover, .back-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.target {
+    position: absolute;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.target:hover {
+    transform: scale(1.1);
+}
+
+.target.normal {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ff6b9d 0%, #feca57 100%);
+    font-size: 1.2rem;
+}
+
+.target.small {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #48dbfb 0%, #0abde3 100%);
+    font-size: 1rem;
+}
+
+.target.big {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ff9ff3 0%, #54a0ff 100%);
+    font-size: 1.4rem;
+}
+
+.target.bonus {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #feca57 0%, #ff9ff3 100%);
+    font-size: 1.1rem;
+    animation: rainbow 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes rainbow {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+.score-popup {
+    position: absolute;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #4facfe;
+    pointer-events: none;
+    animation: scoreFloat 1s ease-out forwards;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes scoreFloat {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+.combo-popup {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff6b9d;
+    pointer-events: none;
+    animation: comboAnimation 0.8s ease-out forwards;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes comboAnimation {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+.hidden {
+    display: none !important;
+}
